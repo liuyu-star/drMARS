@@ -9,7 +9,7 @@
 #
 #  (C) Copyright:  Kenji Fukumizu
 #  
-#  This is a matlab code for gKDR, gKDR-i, gKDR-v.  
+#  This is a R code for gKDR, gKDR-i, gKDR-v.  
 #  For the details of these algorithms, see the follwoing paper
 #   Gradient-based kernel dimension reduction for regression
 #     by Kenji Fukumizu and Chenlei Leng
