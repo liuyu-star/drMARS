@@ -5,9 +5,34 @@ source('drMARS/drMARS.CV.R')
 source('drMARS/drMARS.iter.R')
 source('drMARS/VarTF.R')
 
+#' Improve the performance of MARS by using linear combinations of the covariates which achieve sufficient dimension reduction.
+#'
+#' @param x An n by d numerical matrix is used to train the model.
+#' @param y A response vector of length n is used to train the model.
+#' @param xnew An n by d numerical matrix is used to testing the model.
+#' @param degree The argument of function earth for maximum interaction. Default is NUll, selected from 1 to 4 by gcv.
+#' @param Xadd Whether to add the predictor, If Xadd=TRUE (default) x=cbind(x,xB), otherwise x=xB.
+#' @param Xnorm Whether the variables are transformed into the kurtosis of the normal distribution (1.8) (default TRUE).
+#' @param Xscale Whether standardized for predictors (default FALSE).
+#' @param plus The argument of the drMARS function is used to determine whether the estimated direction matrix is further processed.
+#' @param iter We provide the iterative function drMARS.iter for drMARS, which is not used by default.
+#' @param ndir The dimension of SDR space (d), if no value is specified, we provide two automatic selection methods. 
+#' ndir="NoPreSel" indicates that the selection is done at predict time based on gcv. ndir="NoPreSel" indicates that the selection is done in advance by a 10-fold CV and the prediction is done later.
+#' @param max.dim the maximum dimension of dimension reduction space (default 5).
+#' @param max.iter The argument of the function drMARS.iter for the maximum number of iterations.
+#'
+#' @return A list components:
+#' \itemize{
+#' \item{predicted: Predicted values returned by testing the model with xnew}
+#' \item{fitted: fitted values returned by training the model with x}
+#' \item{ndir: The dimension of SDR space (d)}
+#' \item{degree: The argument of function earth for maximum interaction.}
+#' \item{gcv: The gcv value when making predictions with drMARS.}
+#' \item{B: Direction matrix of SDR space.}
+#' }
 
 
-drMARS.fit = function(x,y,xnew,degree = NULL,Xadd=F,Xnorm=T,Xscale=F,plus=F,iter=F,
+drMARS.fit = function(x,y,xnew,degree = NULL,Xadd=T,Xnorm=T,Xscale=F,plus=F,iter=F,
                       ndir=c("NoPreSel","PreSel",1)[1], max.dim=min(5,ncol(x)), max.iter=50)
 {
   if(Xnorm){
