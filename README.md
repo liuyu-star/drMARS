@@ -20,7 +20,7 @@ In this paper, we show the performance of drMARS in estimating the SDR space, th
 
 In addition, we also provide a three-dimensional graph of the predicted performance of drMARS. The following figure shows that the left side is the fitted graph and the right side is the real graph, the similarity between them is very high, which indicates that the drMARS fitting performance is good. See "example_scripts" file for specific usage and performance in the example. 
 
-![three-dimensional graphs](D:\GitHub\drMARS\plot_drMARS.jpg)
+![three-dimensional graphs](plot_drMARS.jpg)
 
 ### Datasets ###
 
