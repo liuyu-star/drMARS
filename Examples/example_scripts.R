@@ -82,14 +82,13 @@ print(ndir)
 
 
 # Using drMARS
-BB = drMARS(x,y,degree = NULL,Xscale=F,plus=F)$B
-d=drMARS.CV(BB, max.dim=5, nfold=10)$ndir
+B = drMARS(x,y,degree = NULL,Xscale=F,plus=F)$B
+d=drMARS.CV(B, max.dim=5, nfold=10)$ndir
 print(d)
 
 
 
 #############################Performance of prediction#################################
-#The estimation accuracy of the SDR space is evaluated with the true dimensions of the SDR space.
 # Using MARS
 smp=seq(min(p,4))
 gcv.mars=Inf

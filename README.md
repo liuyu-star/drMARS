@@ -1,47 +1,32 @@
-# drMARS
+# Dimension Reduction and MARS
  Improve the performance of MARS by using linear combinations of the covariates which achieve sufficient dimension reduction. 
 
-
-
-# Canonical Correlation Forests #
-
-Paper: https://arxiv.org/abs/1507.05444
-
-### Updates 25/07/17 ###
-
-- Relatively major code overhaul to accompany new journal submission
-- Added support for regression and multiple outputs
-- Added implementations for other algorithms such as rotation forests and random roation forests
-- Minor changes to call structure of genCCF - there is an additional input after the ouputs (i.e. the fourth input) that specifies whether the problem tackled is a regression or classification problem
-- General clean up and improvements
-
-### How do I get set up? ###
-
-Use the add_path function to add everything to your MATLAB path and your ready to go (you need to do this each time you make a new MATLAB).
+Paper: [[2302.05790\] Dimension Reduction and MARS (arxiv.org)](https://arxiv.org/abs/2302.05790)
 
 ### Usage ###
 
-The key functions are genCCF and predictFromCCF which can be called in the following manner:
+In this paper, we show the performance of drMARS in estimating the SDR space, the estimating dimensionality of the SDR space, and the prediction performance. The corresponding function implementations are "drMARS", "drMARS.CV" and "drMARS.fit", respectively. they can be called in the following manner:
 
-* CCF = genCCF(nTrees,input_features,outputs) to train a CCF 
-* predictions = predictFromCCF(CCF,test_input_features)
+* B = drMARS(x, y, degree = NULL, Xscale=F, plus=F)$B
 
-See example_scripts folder for various example scripts for regression, classification etc.
+  The estimation accuracy of the SDR space is evaluated with the true dimensions of the SDR space.
 
-### Contribution guidelines ###
+* d=drMARS.CV(B, max.dim=5, nfold=10)$ndir
+  We select the dimension of SDR space (d) by 10-fold cross-validation.
 
-Any improvements or conversions to other code formats would be appreciated, send me an email if you would like to contribute / require assistance.
+* predictions = drMARS.fit(x,y,xnew,degree = NULL,Xadd=T,Xnorm=F,Xscale=F,plus=F,iter=F,ndir="NoPreSel",max.dim = 5,max.iter=50)$predicted
+
+  We provide a number of arguments to make predictions using drMARS, and users need to adjust the arguments to improve the prediction accuracy of drMARS based on the data. The usage of the parameters is described in the file "drMARS.R".
+
+In addition, we also provide a three-dimensional graph of the predicted performance of drMARS. The following figure shows that the left side is the fitted graph and the right side is the real graph, the similarity between them is very high, which indicates that the drMARS fitting performance is good. See "example_scripts" file for specific usage and performance in the example. 
+
+![three-dimensional graphs](D:\GitHub\drMARS\plot_drMARS.jpg)
 
 ### Datasets ###
 
-Although not all datasets could be added to the repository due to license issues, all are available freely online. Provided datasets can be easily loaded using the loadDataset.m function.  See loadCSVDataset for formatting specifications used.
+The 7 real data used in the paper are in the "DataSets" folder and also contain the data loading and pre-processing script "DataSets.R". All datasets are from the UCI repository [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php) and the kaggle  [Kaggle: Your Machine Learning and Data Science Community](https://www.kaggle.com/), and they can available freely online. The detailed use of the data is described in the paper.
 
-Most classification datasets are from the UCI repository (https://archive.ics.uci.edu/ml/datasets.html).  Exceptions are spirals for which a local script is provided, ORL which can be found at http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html, and Polya which can be bound at http://datam.i2r.a-star.edu.sg/datasets/krbd/SequenceData/Polya.html.
+### Contribution guidelines ###
 
-Regression datasets are all taken from the WEKA repository (http://www.cs.waikato.ac.nz/ml/weka/datasets.html).
-
-Multi-output datasets come either from the UCI repository or Mulan repository (http://mulan.sourceforge.net/datasets-mtr.html).
-
-### Who do I talk to? ###
-
-* Tom Rainforth: twgr@robots.ox.ac.uk
+Any improvements or conversions to other code formats would be appreciated, send me an email if you would like to contribute / require assistance. 
+Yu Liu: liuyuchina123@gmail.com.
