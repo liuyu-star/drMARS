@@ -1,7 +1,7 @@
 # Dimension Reduction and MARS
  Improve the performance of MARS by using linear combinations of the covariates which achieve sufficient dimension reduction. 
 
-Paper: [[2302.05790\] Dimension Reduction and MARS (arxiv.org)](https://arxiv.org/abs/2302.05790)
+Paper: [[2302.05790] Dimension Reduction and MARS (arxiv.org)](https://arxiv.org/abs/2302.05790)
 
 ### Usage ###
 
@@ -16,7 +16,7 @@ In this paper, we show the performance of drMARS in estimating the SDR space, th
 
 * predictions = drMARS.fit(x,y,xnew,degree = NULL,Xadd=T,Xnorm=F,Xscale=F,plus=F,iter=F,ndir="NoPreSel",max.dim = 5,max.iter=50)$predicted
 
-  We provide a number of arguments to make predictions using drMARS, and users need to adjust the arguments to improve the prediction accuracy of drMARS based on the data. The usage of the parameters is described in the file "drMARS.R".
+  We provide a number of arguments to make predictions using drMARS, and users need to adjust the arguments to improve the prediction accuracy of drMARS based on the data. The usage of the parameters is described in the file "drMARS.fit.R".
 
 In addition, we also provide a three-dimensional graph of the predicted performance of drMARS. The following figure shows that the left side is the fitted graph and the right side is the real graph, the similarity between them is very high, which indicates that the drMARS fitting performance is good. See "example_scripts" file for specific usage and performance in the example. 
 
