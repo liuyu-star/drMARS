@@ -12,23 +12,23 @@ source('drMARS/VarTF.R')
 #' @param xnew An n by d numerical matrix is used to testing the model.
 #' @param degree The argument of function earth for maximum interaction. Default is NUll, selected from 1 to 4 by gcv.
 #' @param Xadd Whether to add the predictor, If Xadd=TRUE (default) x=cbind(x,xB), otherwise x=xB.
-#' @param Xnorm Whether the variables are transformed into the kurtosis of the normal distribution (1.8) (default TRUE).
+#' @param Xnorm Whether the variables are transformed into the kurtosis of the normal distribution (default TRUE).
 #' @param Xscale Whether standardized for predictors (default FALSE).
-#' @param plus The argument of the drMARS function is used to determine whether the estimated direction matrix is further processed.
+#' @param plus The argument of the drMARS function is used to determine whether the estimated direction matrix is further processed (default FALSE).
 #' @param iter We provide the iterative function drMARS.iter for drMARS, which is not used by default.
-#' @param ndir The dimension of SDR space (d), if no value is specified, we provide two automatic selection methods. 
-#' ndir="NoPreSel" indicates that the selection is done at predict time based on gcv. ndir="NoPreSel" indicates that the selection is done in advance by a 10-fold CV and the prediction is done later.
-#' @param max.dim the maximum dimension of dimension reduction space (default 5).
-#' @param max.iter The argument of the function drMARS.iter for the maximum number of iterations.
+#' @param ndir The dimension of the SDR space (d), if no value is specified, we provide two automatic selection methods. 
+#' ndir="NoPreSel" indicates that the selection is done at predict time based on gcv. ndir="PreSel" indicates that the selection is done in advance by a 10-fold CV and the prediction is done later.
+#' @param max.dim The maximum dimension of the SDR space (default 5).
+#' @param max.iter The argument of the function drMARS.iter for the maximum number of iterations (default 50).
 #'
 #' @return A list components:
 #' \itemize{
 #' \item{predicted: Predicted values returned by testing the model with xnew}
 #' \item{fitted: fitted values returned by training the model with x}
-#' \item{ndir: The dimension of SDR space (d)}
+#' \item{ndir: The dimension of the SDR space (d)}
 #' \item{degree: The argument of function earth for maximum interaction.}
 #' \item{gcv: The gcv value when making predictions with drMARS.}
-#' \item{B: Direction matrix of SDR space.}
+#' \item{B: Direction matrix of the SDR space.}
 #' }
 
 

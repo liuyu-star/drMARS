@@ -59,8 +59,8 @@ print(err)
 
 
 
-#############################Estimation the dimension of SDR space (d)#################################
-#we select the dimension of SDR space (d) by 10-fold cross-validation.
+#############################Estimation the dimension of the SDR space (d)#################################
+#we select the dimension of the SDR space (d) by 10-fold cross-validation.
 # Using gKDR
 cv=-Inf
 max.dim=5

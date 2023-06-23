@@ -1,32 +1,33 @@
 # Dimension Reduction and MARS
- Improve the performance of MARS by using linear combinations of the covariates which achieve sufficient dimension reduction. 
+We aim to improve the performance of the conventional MARS by using linear combinations of the covariates which achieve sufficient dimension reduction. The proposed methodology is called drMARS.
 
 Paper: [[2302.05790] Dimension Reduction and MARS (arxiv.org)](https://arxiv.org/abs/2302.05790)
 
 ### Usage ###
 
-In this paper, we show the performance of drMARS in estimating the SDR space, the estimating dimensionality of the SDR space, and the prediction performance. The corresponding function implementations are "drMARS", "drMARS.CV" and "drMARS.fit", respectively. they can be called in the following manner:
+In our numerical studies, we explore the finite-sample performance of drMARS in estimating the SDR (sufficient dimension reduction) space. We also examine the estimated dimension of the SDR space, and the estimation/prediction performance. The corresponding functions are "drMARS", "drMARS.CV" and "drMARS.fit", respectively. 
 
 * B = drMARS(x, y, degree = NULL, Xscale=F, plus=F)$B
 
-  The estimation accuracy of the SDR space is evaluated with the true dimensions of the SDR space.
+  The estimation accuracy of the SDR space is evaluated using the true dimension of the SDR space
 
 * d=drMARS.CV(B, max.dim=5, nfold=10)$ndir
-  We select the dimension of SDR space (d) by 10-fold cross-validation.
+  We select the dimension of SDR space via the 10-fold cross-validation.
 
 * predictions = drMARS.fit(x,y,xnew,degree = NULL,Xadd=T,Xnorm=F,Xscale=F,plus=F,iter=F,ndir="NoPreSel",max.dim = 5,max.iter=50)$predicted
 
-  We provide a number of arguments to make predictions using drMARS, and users need to adjust the arguments to improve the prediction accuracy of drMARS based on the data. The usage of the parameters is described in the file "drMARS.fit.R".
+  We provide a few arguments in the function to make estimation/prediction using drMARS, and users need to adjust them to improve the accuracy based on the data. The usage of the parameters is described in the file "drMARS.fit.R".
 
-In addition, we also provide a three-dimensional graph of the predicted performance of drMARS. The following figure shows that the left side is the fitted graph and the right side is the real graph, the similarity between them is very high, which indicates that the drMARS fitting performance is good. See "example_scripts" file for specific usage and performance in the example. 
+We next provide a three-dimensional graph to demonstrate the estimation performance of drMARS. The left plot in the following figure is the estimated function whereas the right plot is the true one. By comparing the two plots, we observe that drMARS provides a good model fitting. Please refer to "example_scripts" file for more details. 
 
 ![three-dimensional graphs](plot_drMARS.jpg)
 
 ### Datasets ###
 
-The 7 real data used in the paper are in the "DataSets" folder and also contain the data loading and pre-processing script "DataSets.R". All datasets are from the UCI repository [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php) and the kaggle  [Kaggle: Your Machine Learning and Data Science Community](https://www.kaggle.com/), and they can available freely online. The detailed use of the data is described in the paper.
+The 7 real data dets used in the paper are available in the "DataSets" folder which contain the data loading and pre-processing script ("DataSets.R"). The datasets are obtained from the UCI repository [UCI Machine Learning Repository] (https://archive.ics.uci.edu/ml/index.php) and the Kaggle [Kaggle: Your Machine Learning and Data Science Community] (https://www.kaggle.com/), which are available freely online. The introduction of the data information is provided in Section 5 of the paper.
 
 ### Contribution guidelines ###
 
-Any improvements or conversions to other code formats would be appreciated, send me an email if you would like to contribute / require assistance. 
+Any improvements or conversions to other code formats would be appreciated. Please send me an email if you require assistance. 
+
 Yu Liu: liuyuchina123@gmail.com.
