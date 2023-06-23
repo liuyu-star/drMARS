@@ -14,8 +14,12 @@ In our numerical studies, we explore the finite-sample performance of drMARS in 
 * d=drMARS.CV(B, max.dim=5, nfold=10)$ndir
   We select the dimension of SDR space via the 10-fold cross-validation.
 
-* predictions = drMARS.fit(x,y,xnew,degree = NULL,Xadd=T,Xnorm=F,Xscale=F,plus=F,iter=F,ndir="NoPreSel",max.dim = 5,max.iter=50)$predicted
+* fit = drMARS.fit(x,y,xnew,degree = NULL,Xadd=T,Xnorm=F,Xscale=F,plus=F,iter=F,ndir="NoPreSel",max.dim = 5,max.iter=50)
 
+  estimation=fit$fitted
+  
+  prediction=fit$predicted
+  
   We provide a few arguments in the function to make estimation/prediction using drMARS, and users need to adjust them to improve the accuracy based on the data. The usage of the parameters is described in the file "drMARS.fit.R".
 
 We next provide a three-dimensional graph to demonstrate the estimation performance of drMARS. The left plot in the following figure is the estimated function whereas the right plot is the true one. By comparing the two plots, we observe that drMARS provides a good model fitting. Please refer to "example_scripts" file for more details. 
