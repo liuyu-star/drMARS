@@ -24,11 +24,11 @@ In our numerical studies, we explore the finite-sample performance of drMARS in 
 
 We next provide a three-dimensional graph to demonstrate the estimation performance of drMARS. The left plot in the following figure is the estimated function whereas the right plot is the true one. By comparing the two plots, we observe that drMARS provides a good model fitting. Please refer to "example_scripts" file for more details. 
 
-![three-dimensional graphs](plot_drMARS.jpg)
+<img src="plot_drMARS.jpg" alt="three-dimensional graphs" style="zoom:20%;" />
 
 ### Datasets ###
 
-The 7 real data dets used in the paper are available in the "DataSets" folder which contain the data loading and pre-processing script ("DataSets.R"). The datasets are obtained from the UCI repository [UCI Machine Learning Repository] (https://archive.ics.uci.edu/ml/index.php) and the Kaggle [Kaggle: Your Machine Learning and Data Science Community] (https://www.kaggle.com/), which are available freely online. The introduction of the data information is provided in Section 5 of the paper.
+The 7 real data dets used in the paper are available in the "DataSets" folder which contain the data loading and pre-processing script ("DataSets.R"). The datasets are obtained from the UCI repository [(UCI Machine Learning Repository)](https://archive.ics.uci.edu/ml/index.php) and the Kaggle [(Kaggle: Your Machine Learning and Data Science Community)](https://www.kaggle.com/), which are available freely online. The introduction of the data information is provided in Section 5 of the paper.
 
 ### Contribution guidelines ###
 
