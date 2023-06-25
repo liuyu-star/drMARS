@@ -24,11 +24,9 @@ In our numerical studies, we explore the finite-sample performance of drMARS in 
 
 We next provide a three-dimensional graph to demonstrate the estimation performance of drMARS. The left plot in the following figure is the estimated function whereas the right plot is the true one. By comparing the two plots, we observe that drMARS provides a good model fitting. Please refer to "example_scripts" file for more details. 
 
-```html
 <div  align="center">    
-<img src="plot_drMARS.jpg" alt="three-dimensional graphs" height = "400" />
+<img src="plot_drMARS.jpg" alt="three-dimensional graphs" height = "300" />
 </div>
-```
 
 ### Datasets ###
 
