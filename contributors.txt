@@ -1,6 +1,0 @@
-Code: Yu Liu
-Algorithm: Yu Liu and Yingcun Xia
-Theory: Degui Li
-Please reference this paper if you use the code:
-    Degui Li and Yu Liu and Yingcun Xia. "Dimension Reduction and MARS." arXiv 
-    preprint arXiv:2302.05790 (2023).
