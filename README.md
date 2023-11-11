@@ -1,7 +1,7 @@
 # Dimension Reduction and MARS
 We aim to improve the performance of the conventional MARS by using linear combinations of the covariates which achieve sufficient dimension reduction. The proposed methodology is called drMARS.
 
-Paper: [[2302.05790] Dimension Reduction and MARS (arxiv.org)](https://arxiv.org/abs/2302.05790)
+Paper: [Dimension Reduction and MARS (jmlr.org)](https://jmlr.org/papers/v24/22-1422.html)
 
 ### Usage ###
 
